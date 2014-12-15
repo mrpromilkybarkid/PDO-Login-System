@@ -14,20 +14,12 @@ include_once 'inc/header.php';
 
 ?>
 
-<style>
-
-body {
-padding-top: 15px;
-}
-
-</style>
-
 <div class="container">
 
 <?php if ($loggedIn === 'true'): ?>
 
     <div class="jumbotron">
-    <span class="alert alert-success">Welcome!</span> <br />
+    <span class="alert alert-success">Welcome, <?php echo ucfirst($_SESSION['username']); ?></span> <br />
     <br />
     <a href="logout.php">Logout</a>
     </div>
