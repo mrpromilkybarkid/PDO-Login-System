@@ -16,22 +16,19 @@ include_once 'inc/header.php';
 
 <div class="container">
 
-<?php if ($loggedIn === 'true'): ?>
+<?php 
 
-    <div class="jumbotron">
-    <span class="alert alert-success">Welcome, <?php echo ucfirst($_SESSION['username']); ?></span> <br />
-    <br />
-    <a href="logout.php">Logout</a>
-    </div>
+    if ($loggedIn === 'true'): 
 
-<?php elseif ($loggedIn === 'false'): ?>
+        include_once 'inc/indexLoggedIn.php';
 
-    <div class="jumbotron">
-    <a href="login.php">Login</a> <br />
-    <a href="register.php">Register</a>
-    </div>
+    elseif ($loggedIn === 'false'): 
 
-<?php endif; ?>
+        include_once 'inc/indexDefault.php';
+
+    endif;
+
+?>
 
 </div>
 
